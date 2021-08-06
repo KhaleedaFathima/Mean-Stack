@@ -1,0 +1,21 @@
+.Ipl {
+    border-collapse: collapse;
+  }
+  
+  .Ipl th {
+    border-bottom: 1px solid;
+  }
+  .Ipl td, .friends th {
+    border-left: 1px solid;
+    padding: 5px 10px;
+  }
+  .Ipl td:first-child, .friends th:first-child {
+    border-left: none;
+  }
+  
+  .sortorder:after {
+    content: '\25b2';   
+  }
+  .sortorder.reverse:after {
+    content: '\25bc';   
+  }

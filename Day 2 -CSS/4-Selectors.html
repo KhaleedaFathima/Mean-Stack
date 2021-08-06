@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        /**
+        Element selector(only individual elemenets are selected to display in diff formats)
+        **/
+        h3{
+            color:coral;
+        }
+ 
+        h1{
+            color: cornflowerblue;
+        }
+        /** id selector (For suppose you have 2 h1 but want to change in different styles so we use id and mention the id in the html part as well eg. <h1 id=name>. Also it starts with # **/
+        #hid{
+            color:red;
+        }
+        /** class selector(can change accorrding to class and starts with . Mention it in the html as well.eg:<div class="name"**/
+        .mycls{
+            font-size: 30px;
+            color: rosybrown;
+        }
+        /** bg is connected to class and we can write it as <h2 class="class name bg. Also it starts with . "**/
+        .bg{
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is h1</h1>
+    <h1 id="hid">This is another h1</h1>
+    <div class="mycls">
+        <p>This is a paragraph</p>
+    </div>
+    <p class="mycls">Another paragraph</p>
+    <h2 class = "mycls bg">This is h2</h2>
+    <h3>This is h3</h3>
+</body>
+</html>

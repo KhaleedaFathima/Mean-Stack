@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body onload="getTodos()">
+    <h1> Todos</h1>
+   <!--  we are creating table in order to get id for the result or else how would o/p would come also the data is display inside the table-->
+    <table id="result">
+
+    </table>
+    <script>
+        //todos we are creating as an array tats y next line we are giving empty array
+         todos=[];
+
+        function getTodos()
+        {
+            //fetch is getting the data from tat url, then is a promise, we are getting response, so we are converting the response into json.
+            //json=>console.log(json) to check whether data are coming in console or not.
+            //json=>displayData(json) we are passing the json in display function.In other words the datas we are passing in display.json is used for conversion like xml etc.
+         fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response=>response.json())
+            //.then(json=>console.log(json))
+            .then(json=>displayData(json))
+        }
+        /**
+         * 
+         * {userId: 1, id: 1, title: "delectus aut autem", completed: false}
+         * **/
+          // displayData(jsondata), here jsondata is used to refer the data inside.We can use any name for tat.Its like an identifier.
+         function displayData(jsondata)
+         {
+             //we are assigning todos(whole) as jsondata.
+           todos=jsondata;
+           //checking purpose we are using console.log
+           console.log('displayData:::',todos);
+           //for table header we are making a row.
+           var data="<tr><td><b> User Id </b></td> <td><b>Id </b></td> <td><b>Title</b></td> <td><b>Completed </b></td></tr>";
+           //Now we are adding the datas inside it so we are using for loop.In order to add data in loops.
+           for(i=0;i<todos.length;i++)
+           
+          {
+           //Now we are adding one by one in one shot and also not concating it for tat we use ` for not concating the data. $ for values.
+                data=data+`<tr><td>${todos[i].userId}</td><td>${todos[i].id}</td><td>${todos[i].title}</td><td>${todos[i].completed}</td></tr>`;
+         }            
+            document.getElementById("result").innerHTML=data;
+        }        
+    </script>
+</body>
+</html>
+       

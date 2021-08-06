@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Patient Management </title>
+</head>
+<body style="background-color:turquoise">
+    <h1 style="color:black;" >Corona Patient Management </h1>
+
+<form action="details.html" method="POST">
+    <Label><b>Enter Patient name</b></Label>
+    <input type="text" id="name" name="name" placeholder="Enter Patient Name:" maxlength="50" autofocus><br>
+    
+    
+      <label><b>Gender:<b></label></label>
+    Male: <input type="radio" name="gender" value="Male" checked>
+    Female: <input type="radio" name="gender" value="Female">
+    Others: <input type="radio" name="gender" value="Others"><br>
+    
+
+    <label> <b>Location</b></label>
+    <select id="location">
+        <option value="chn">Chennai</option>
+        <option value="bng">Bangalore</option>
+        <option value="hyd">Hyderabad</option>
+    </select>
+    <br>
+
+    <label for="Pincode"><b>Pincode</b></label>
+  <input type="text" id="Pincode" name="Pincode" placeholder="Enter Pincode" maxlength="6"><br>
+
+  
+  <label for="Aadhar"><b>Aadhar Number </b></label>
+  <input type="text" id="aadhar" name="aadhar" placeholder="Enter Aadhar Number" maxlength="10"><br>
+
+  <label for="phone"><b>Phone No</b></label> 
+  <input type="phone"placeholder="Enter Phone number" id="phone" name="phone" value="" maxlength="10"><br>
+
+  <Label><b>Enter Attendee name </b></Label>
+    <input type="text" id="attname" name="attname" placeholder="Enter Attendee Name"> <br>
+
+    <label for="date"><b>Date and Time request</b></label>
+  <input type="datetime-local" id="date" name="date"> <br>
+  
+  <label for="vol"><b>SP02 Level </b></label>
+  <input type="range" id="vol" name="vol" min="0" max="100"><br>
+
+  <label for="hosptyp"><b>Hospital Type </b></label> <br>
+        <input list="hosptyp" name="hosptyp" placeholder="SELECT" >
+        <datalist id="hosptyp">
+        <option value="Govt">Govt</option>
+        <option value="Private">Private</option>
+        <option value="Care Center">Care Center</option>
+        
+        </datalist><br>
+        <br>
+
+        <input type="submit" value="Submit" >
+
+        </form>
+        
+        
+
+  
+    
+</body>
+</html>

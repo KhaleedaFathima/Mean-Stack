@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL</title>
+</head>
+<body>
+ 
+    <h1>IPL</h1>
+    
+   <label for="name"><b> Name </b></label>
+    <input type="text" name="name" id="name" placeholder="Enter Name"><br>
+    <label for="team"><b>Team </b></label>
+    <input type="text" name="team" id="team" placeholder="Enter Team"><br>
+    <label for="season"><b>Season </b></label>
+    <input type="text" name="season" id="season" placeholder="Enter Season"><br>
+    <label for="runs"><b>Runs</b></label>
+    <input type="text" name="runs" id="runs" placeholder="Enter Runs"><br>
+    <label for="wickets"><b>Wickets</b></label>
+    <input type="text" name="wickets" id="wickets" placeholder="Enter wickets"><br>
+    <button onclick="saveIPL()">Save</button>
+    <button> Leader Board</button>
+    
+    <table id="result">
+    </table>
+    
+    <script>
+ 
+    ipllist=[];
+ 
+    function IPL(name,team,season,runs,wickets){
+        this.name = name;
+        this.team = team;
+        this.season=season;
+        this.runs=runs;
+        this.wickets = wickets;
+        this.getruns=function(){
+            return this.runs;
+        };
+        this.getwickets=function(){
+            return this.wickets;
+        }
+    }
+    
+    function displayIPL(){
+        var data = '';    
+        for (var i=0;i<ipllist.length;i++){
+            data = data + '<tr>';
+            data=data+'<td>'+ipllist[i].name+'</td>'+'<td>'+ipllist[i].team+'</td>' +'<td>'+ipllist[i].season+'</td>' +'<td>'+'<td>'+ipllist[i].runs+'</td>' +'<td>'+ipllist[i].wickets+'</td>';    
+            data = data+'</tr>';
+        }
+        document.getElementById('result').innerHTML=data;
+    }
+
+    
+            function saveIPL(){
+            name = document.getElementById("name").value;
+            team = document.getElementById("team").value;
+            season = document.getElementById("season").value;
+            runs = document.getElementById("runs").value;
+            wickets = document.getElementById("wickets").value;
+            ipl = new IPL(name,team,season,runs,wickets);
+            ipllist.push(ipl);
+            console.log('ipllist ',ipllist);
+            displayIPL();
+        }
+
+        
+            
+
+
+            
+        
+ 
+    </script>
+</body>
+</html>

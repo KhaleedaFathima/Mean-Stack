@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-orderBy-dynamic-production</title>
+  <link href="AssignmentIplstyle.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  
+  <script src="AssignmentIPLscript.js"></script>
+    
+</head>
+<body ng-app="orderByIpl">
+  <div ng-controller="IplController">
+  <pre>Sort by = {{propertyName}}; reverse = {{reverse}}</pre>
+  <hr/>
+  <button ng-click="propertyName = null; reverse = false">Set to unsorted</button>
+  <hr/>
+  <table class="Ipl">
+    <tr>
+      <th>
+        <button>Player Name</button>
+      </th>
+      <th>
+        <button> Team</button>
+      </th>
+      <th>
+        <button>Season</button>
+      </th>
+      <th>
+        <button ng-click="sortBy('Runs')">Runs</button>
+        <span class="sortorder" ng-show="propertyName === 'Runs'" ng-class="{reverse: reverse}"></span>
+      </th>
+      <th>
+        <button ng-click="sortBy('Wickets')">Wickets</button>
+        <span class="sortorder" ng-show="propertyName === 'Wickets'" ng-class="{reverse: reverse}"></span>
+      </th>
+     
+    </tr>
+    <tr ng-repeat="Ipls in Ipl | orderBy:propertyName:reverse">
+      <td>{{Ipls.PlayerName}}</td>
+      <td>{{Ipls.Team}}</td>
+      <td>{{Ipls.Season}}</td>
+      <td>{{Ipls.Runs}}</td>
+      <td>{{Ipls.Wickets}}</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

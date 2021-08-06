@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-orderBy-static-production</title>
+  <link href="14-FilterOrderBy.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="14-FilterOrderBy.js"></script>
+  
+</head>
+<body ng-app="orderByExample1">
+  <div ng-controller="ExampleController">
+  <table class="friends">
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Age</th>
+    </tr>
+    <!-- Filter orderBy:'-age'-> descending order 'age'->ascending order-->
+    <tr ng-repeat="friend in friends | orderBy:'-age'">
+      <td>{{friend.name}}</td>
+      <td>{{friend.phone}}</td>
+      <td>{{friend.age}}</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
